@@ -1,8 +1,16 @@
 #! /usr/bin/env sh
 
+if [ -f config ]; then
+    . config
+fi
+
 . commands/install.sh
 . commands/start.sh
 . commands/stop.sh
+
+if [ -z "$NETWORK_NAME" ]; then
+    NETWORK_NAME="ipfsi2pbridge"
+fi
 
 for command in $@; do
     $command
