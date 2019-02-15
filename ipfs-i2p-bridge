@@ -1,0 +1,10 @@
+#! /usr/bin/env sh
+
+. commands/install.sh
+. commands/start.sh
+. commands/stop.sh
+
+for command in $@; do
+    $command
+done
+
