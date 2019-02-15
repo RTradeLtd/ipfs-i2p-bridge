@@ -10,7 +10,7 @@ countdown() {
 }
 
 starti2p(){
-    docker run --detatch \
+    docker run --detach \
         --network $NETWORK_NAME \
         --volume i2p:/var/lib/i2p:Z \
         $(whoami)/i2p.ipfs
