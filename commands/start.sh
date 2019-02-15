@@ -14,6 +14,8 @@ countdown() {
 starti2p(){
     createnetwork
     docker run --detach \
+        --ip 172.92.92.1 \
+        --hostname "i2pbridge"
         --network $NETWORK_NAME \
         --volume i2p:/var/lib/i2p:Z \
         $(whoami)/i2p.ipfs
@@ -23,8 +25,10 @@ starti2p(){
 startipfs(){
     createnetwork
     docker run \
+        --hostname "ipfsbridge"$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 3 | head -n 1) \
         --network $NETWORK_NAME \
         $(whoami)/ipfs.i2p
+    countdown
 }
 
 start(){
