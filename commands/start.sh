@@ -1,15 +1,10 @@
 #! /usr/bin/env bash
 
 countdown() {
-  secs=$1
-  shift
-  msg=$@
-  while [ $secs -gt 0 ]
-  do
-    printf "\r\033[KWaiting %.d seconds $msg" $((secs--))
-    sleep 1
-  done
-  echo
+    l="30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0"
+    for i in $l; do
+        echo $i
+    done
 }
 
 starti2p(){
@@ -17,7 +12,7 @@ starti2p(){
         --network $NETWORK_NAME \
         --volume i2p:/var/lib/i2p:Z \
         $(whoami)/i2p.ipfs
-    countdown 30 "Giving i2p time to bootstrap"
+    countdown
 }
 
 startipfs(){
