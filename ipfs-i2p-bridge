@@ -7,6 +7,7 @@ fi
 . commands/install.sh
 . commands/start.sh
 . commands/stop.sh
+. commands/network.sh
 
 if [ -z "$NETWORK_NAME" ]; then
     NETWORK_NAME="ipfsi2pbridge"
