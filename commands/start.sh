@@ -15,7 +15,7 @@ starti2p(){
     createnetwork
     docker run --detach \
         --ip 172.92.92.1 \
-        --hostname "i2pbridge"
+        --hostname "i2pbridge" \
         --network $NETWORK_NAME \
         --volume i2p:/var/lib/i2p:Z \
         $(whoami)/i2p.ipfs
