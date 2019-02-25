@@ -23,6 +23,34 @@ So to install and run a bridge with the default settings in one line, you just
 All the commands:
 -----------------
 
+        installi2p - Install customized Java I2P Docker image from
+          rtradetech/ipfs-i2p-bridge:i2p
+        installipfs - Install customized go-ipfs Docker image from
+          rtradetech/ipfs-i2p-bridge:ipfs
+        install - Run both installi2p and installipfs
+        update - Pull sources from github and run install
+
+        createnetwork - Set up a docker network just for I2P and IPFS containers
+        destroynetwork - Tear down the docker network for I2P and IPFS
+          containers
+
+        countdown - Count down for 30 seconds to give services time to start
+        starti2p - Start i2p application in the container and countdown
+        startipfs - Start go-ipfs application in the container and countdown
+        start - Run both starti2p and startipfs
+
+        stopi2p - Stop the i2p container
+        stopipfs - Stop the go-ipfs container
+        stop - Run both stopi2p and stopipfs
+
+        removei2p - Remove the i2p container
+        removeipfs - Remove the go-ipfs container
+        remove - Run both removei2p and removeipfs
+
+        cleanupi2p - Remove the i2p image and it's volume
+        cleanupipfs - Remove the go-ipfs image and it's volume
+        cleanup - Run both cleanupi2p and cleanupipfs
+
 Multihoming:
 ------------
 
