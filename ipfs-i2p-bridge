@@ -1,16 +1,23 @@
 #! /usr/bin/env sh
 
 if [ -f config ]; then
-    . config
+    . ./config
 fi
 
 . commands/install.sh
+. commands/remove.sh
+. commands/cleanup.sh
 . commands/start.sh
 . commands/stop.sh
 . commands/network.sh
+. commands/usage.sh
 
 if [ -z "$NETWORK_NAME" ]; then
     NETWORK_NAME="ipfsi2pbridge"
+fi
+
+if [ -z "$BRIGE_NODE_ID" ]; then
+    BRIDGE_NODE_ID=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 3 | head -n 1)
 fi
 
 for command in $@; do

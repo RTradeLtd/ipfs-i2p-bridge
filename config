@@ -1,2 +1,3 @@
 NETWORK_NAME=ipfsi2pbridge
 BRIGE_NODE_ID=test
+NO_USE_CACHE=""
